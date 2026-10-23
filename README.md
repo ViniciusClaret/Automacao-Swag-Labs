@@ -90,7 +90,8 @@ CAR-002 - Item adicionado aparece no carrinho @prioridade-alta @severidade-criti
 - **Tags** de prioridade (`@prioridade-alta`, `@prioridade-media`, `@prioridade-baixa`) e de severidade (`@severidade-critica`, `@severidade-alta`, `@severidade-media`, `@severidade-baixa`)
 - **`@bug-conhecido`** nos testes que falham por causa de um defeito já identificado
 
-## Autoria
+
+## Autoria ##
 
 **Vinicius Claret**, QA de software em formação.
 
