@@ -56,7 +56,7 @@ npm run test:carrinho
 
 # com o navegador visível
 npm run test:headed
-
+```
 
 ### Resultado da execução
 
