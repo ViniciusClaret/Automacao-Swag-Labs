@@ -6,15 +6,9 @@ Projeto de automação de testes com **Playwright (JavaScript)** para o site de 
 
 - **Sistema sob teste:** Sauce Demo, e-commerce de demonstração (web), em https://www.saucedemo.com/
 - **Escopo:** login (autenticação, mensagens de erro, usuários especiais e proteção de rotas) e carrinho (visualização, remoção e navegação)
-- **Fora do escopo:** checkout completo, ordenação e filtros de produtos, testes de API e de performance
 - **Tipo de teste:** E2E (ponta a ponta) no navegador
 - **Total:** 34 testes automatizados (21 de login e 13 de carrinho)
 
-### Decisão de estilo: testes "brutos"
-
-Os testes foram escritos de forma **simples e direta**, sem Page Objects, helpers ou arquivos de dados. Cada teste é independente e repete os próprios passos (abrir o site, fazer login etc.). Isso deixa cada caso fácil de ler de cima a baixo, sem precisar abrir outros arquivos.
-
-A desvantagem é a repetição: se um seletor mudar, é preciso ajustar em vários testes. Uma evolução natural do projeto é extrair os seletores para Page Objects.
 
 ## Tecnologias
 
@@ -63,51 +57,24 @@ npm run test:carrinho
 # com o navegador visível
 npm run test:headed
 
-# modo interface (UI Mode) e depuração
-npm run test:ui
-npm run test:debug
 
-# um teste específico pelo ID
-npx playwright test --grep "CAR-002"
-
-# por prioridade
-npx playwright test --grep @prioridade-alta
-
-# tudo, menos os testes com bug conhecido
-npx playwright test --grep-invert @bug-conhecido
-```
-
-## Relatório de testes
-
-Depois de cada execução, o Playwright gera:
-
-- **Relatório HTML** em `playwright-report/`, que mostra cada teste, os passos, capturas de tela e traces das falhas. Para abrir:
-
-  ```bash
-  npm run report
-  ```
-
-- **Arquivo JSON** em `test-results/results.json`, com os resultados em formato de dados.
-
-### Resultado da última execução
-
-*A preencher após rodar `npm test`.*
+### Resultado da execução
 
 | Data | Ambiente | Navegador |
 |------|----------|-----------|
-| a preencher | a preencher | Chromium |
+| 23/10/2026 | Vs Code | Chromium |
 
 | Resultado | Qtde |
 |-----------|-----:|
-| ✅ Passou | a preencher |
-| ❌ Falhou | a preencher |
+| ✅ Passou | 33 |
+| ❌ Falhou | 01 |
 | **Total** | **34** |
 
 ### Falha conhecida
 
 | Teste | Situação | Origem |
 |-------|----------|--------|
-| `CAR-009` - Checkout com carrinho vazio (`@bug-conhecido`) | Falha na execução manual de 06/10/2026 | [02-carrinho.md](docs/casos-de-teste/02-carrinho.md) |
+| `CAR-009` - Checkout com carrinho vazio | Falha na execução manual de 06/10/2026 | [02-carrinho.md](docs/casos-de-teste/02-carrinho.md) |
 
 O teste automatizado verifica o comportamento **correto** (checkout bloqueado com o carrinho vazio, usuário permanece em `cart.html`). Enquanto o bug existir no sistema, esse teste aparece como **falhado** no relatório. Isso é intencional: a falha sinaliza o bug e não é escondida. Quando o bug for corrigido, o teste passa sem nenhuma alteração.
 
@@ -127,5 +94,4 @@ CAR-002 - Item adicionado aparece no carrinho @prioridade-alta @severidade-criti
 
 **Vinicius Claret**, QA de software em formação.
 
-- GitHub: a preencher
-- LinkedIn: a preencher
+- LinkedIn: https://www.linkedin.com/in/viniciusclaret/
